@@ -14,7 +14,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -53,14 +53,26 @@ header {
   margin: 0;
 }
 
-section,
+/* Ancho uniforme para todos los bloques */
+.content-block {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Ajustes específicos para cada sección */
 #about,
 #background,
 #experience,
 #education,
 #projects,
 #skills,
-#contact {
+#contact,
+#contact-section {
   padding: 2rem;
   margin: 2rem auto;
   max-width: 800px;
@@ -79,6 +91,32 @@ section,
   width: 100%;
   border-radius: 50%;
   margin-bottom: 1rem;
+}
+
+
+.education-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.education-content {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.education-block {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.education-date {
+  display: block;
+  margin-bottom: 1rem;
+  font-style: italic;
 }
 
 .education-block,
@@ -138,11 +176,12 @@ footer .right-content {
   border: none;
   cursor: pointer;
   color: #fff;
+  margin-right: 1rem; /* Ajuste del margen del icono del tema */
 }
 
 .theme-icon {
   font-size: 24px;
-  color: #fff;
+  color: #fff !important; /* Asegurarse de que el icono siempre sea blanco */
 }
 
 /* Estilos para tema dark */
@@ -172,26 +211,31 @@ body.theme-dark .theme-icon {
   color: #fff;
 }
 
-body.theme-dark section {
-  background: #444;
-  color: #fff;
-}
-
-body.theme-dark section a {
-  color: #fff;
-}
-
+body.theme-dark section,
 body.theme-dark #about,
 body.theme-dark #background,
 body.theme-dark #experience,
 body.theme-dark #education,
 body.theme-dark #projects,
 body.theme-dark #skills,
-body.theme-dark #contact {
+body.theme-dark #contact,
+body.theme-dark #contact-section {
   background: #444;
+  color: #fff;
 }
 
-/* Estilos específicos para la sección About */
+body.theme-dark #contact-form input,
+body.theme-dark #contact-form textarea {
+  background: #555;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.theme-dark #contact-form button {
+  background: #666;
+  color: #fff;
+}
+
 #about {
   text-align: center;
 }
@@ -241,4 +285,47 @@ svg {
 
 .axisLabel {
   display: none;
+}
+
+/* Ajustes específicos para el bloque de contacto */
+#contact-section {
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+#contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-section input,
+#contact-section textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#contact-section button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact-info a {
+  color: rgb(112, 181, 238); 
 }

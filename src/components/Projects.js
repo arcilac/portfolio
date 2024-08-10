@@ -1,4 +1,5 @@
 import React from "react"
+import { Parallax } from "react-scroll-parallax"
 import "../assets/css/styles.css"
 
 const Projects = () => {
@@ -8,14 +9,26 @@ const Projects = () => {
       <div className="projects-block">
         <h3>React</h3>
         <h4>
-          <a href="https://github.com/Arcilac/todo-react" target="_blank" rel="noopener noreferrer">
-            Visit on GitHub
-          </a>
+          <Parallax scale={[1, 1.2]}>
+            <a
+              href="https://github.com/Arcilac/todo-react"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit on GitHub
+            </a>
+          </Parallax>
         </h4>
         <h4>
-          <a href="https://arcilac.github.io/todo-react/" target="_blank" rel="noopener noreferrer">
-            view the project
-          </a>
+          <Parallax scale={[1, 1.2]}>
+            <a
+              href="https://arcilac.github.io/todo-react/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View the Project
+            </a>
+          </Parallax>
         </h4>
         <p>
           I used React to create a task markup project that facilitates the organization and
@@ -26,13 +39,15 @@ const Projects = () => {
       <div className="projects-block">
         <h3>Exchange</h3>
         <h4>
-          <a
-            href="https://github.com/Arcilac/redux-practice"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit on GitHub
-          </a>
+          <Parallax scale={[1, 1.2]}>
+            <a
+              href="https://github.com/Arcilac/redux-practice"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit on GitHub
+            </a>
+          </Parallax>
         </h4>
         <p>
           I developed a currency converter project using Redux to exchange different currencies,
@@ -43,21 +58,24 @@ const Projects = () => {
       <div className="projects-block">
         <h3>Time</h3>
         <h4>
-          <a
-            href="https://github.com/Arcilac/time"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit on GitHub
-          </a>
+          <Parallax scale={[1, 1.2]}>
+            <a href="https://github.com/Arcilac/time" target="_blank" rel="noopener noreferrer">
+              Visit on GitHub
+            </a>
+          </Parallax>
         </h4>
-          <h4>
-          <a href="https://arcilac.github.io/time/" target="_blank" rel="noopener noreferrer">
-            view the project
-          </a>
+        <h4>
+          <Parallax scale={[1, 1.2]}>
+            <a href="https://arcilac.github.io/time/" target="_blank" rel="noopener noreferrer">
+              View the Project
+            </a>
+          </Parallax>
         </h4>
         <p>
-          I developed a small JavaScript library to calculate the hours worked. This library allows to calculate the time difference between two timestamps, which is useful for recording and calculating working hours. It uses native JavaScript functionality to calculate the difference in hours and minutes.
+          I developed a small JavaScript library to calculate the hours worked. This library allows
+          to calculate the time difference between two timestamps, which is useful for recording and
+          calculating working hours. It uses native JavaScript functionality to calculate the
+          difference in hours and minutes.
         </p>
       </div>
     </div>

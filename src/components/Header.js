@@ -2,11 +2,14 @@ import React from "react"
 import ThemeSwitcher from "./ThemeSwitcher"
 import "../assets/css/styles.css"
 
-const Header = () => {
+const Header = ({ onContactClick }) => {
+  const handleContactClick = (e) => {
+    onContactClick()
+  }
+
   return (
     <header>
       <ThemeSwitcher />
-
       <ul id="menu" className="shadow">
         <li>
           <a href="#about">About</a>
@@ -27,7 +30,9 @@ const Header = () => {
           <a href="#skills">Skills</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact" onClick={handleContactClick}>
+            Contact
+          </a>
         </li>
       </ul>
     </header>

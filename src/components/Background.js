@@ -1,10 +1,13 @@
 import React from "react"
+import { Parallax } from "react-scroll-parallax"
 import "../assets/css/styles.css"
 
 function Background() {
   return (
     <div id="background" className="background-alt">
-      <h2 className="heading">My Background</h2>
+      <Parallax translateX={[-30, 30]}>
+        <h2 className="heading">My Background</h2>
+      </Parallax>
       <div id="experience-timeline">
         <div data-date="2021- current">
           <p>
