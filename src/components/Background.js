@@ -1,6 +1,7 @@
+// components/Background.js
 import React from "react"
 import { Parallax } from "react-scroll-parallax"
-import "../assets/css/styles.css"
+import "../App.css"
 
 function Background() {
   return (

@@ -1,0 +1,16 @@
+export const skills = [
+  { name: "JavaScript", type: "frontend", level: 90, color: "#F0DB4F" },
+  { name: "React", type: "frontend", level: 85, color: "#61DAFB" },
+  { name: "Next.js", type: "frontend", level: 80, color: "#000000" },
+  { name: "Vue.js", type: "frontend", level: 75, color: "#41B883" },
+  { name: "CSS/SASS", type: "frontend", level: 85, color: "#CC6699" },
+  { name: "TailwindCSS", type: "frontend", level: 90, color: "#06B6D4" },
+  { name: "Node.js", type: "backend", level: 85, color: "#339933" },
+  { name: "Express", type: "backend", level: 80, color: "#000000" },
+  { name: "MongoDB", type: "backend", level: 75, color: "#47A248" },
+  { name: "PostgreSQL", type: "backend", level: 70, color: "#336791" },
+  { name: "GraphQL", type: "backend", level: 65, color: "#E10098" },
+  { name: "Docker", type: "devops", level: 70, color: "#2496ED" },
+  { name: "Git", type: "devops", level: 85, color: "#F05032" },
+  { name: "AWS", type: "devops", level: 75, color: "#FF9900" },
+]

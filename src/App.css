@@ -1,124 +1,146 @@
-.App {
-  text-align: center;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Custom animations */
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
+@keyframes menu-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+/* Custom classes */
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s ease-out;
 }
 
-#menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
 }
 
-#menu li {
-  margin: 0 1rem;
+.animate-menu-click {
+  animation: menu-click 0.3s ease-in-out;
 }
 
-#menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-#skills ul {
-  list-style-type: none;
-  padding: 0;
+/* Custom styles for sections */
+.section-title {
+  @apply text-3xl font-bold mb-8 text-center;
 }
 
-#skills ul li {
-  margin-bottom: 0.5rem;
+.project-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105;
 }
 
-#skills ul li::before {
-  content: "\2022";
-  color: #333;
-  width: 1em;
-  margin-left: -1em;
-  margin-right: 0.5em;
+.project-image {
+  @apply w-full h-48 object-cover;
 }
 
-footer {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
+.project-content {
+  @apply p-4;
 }
 
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.project-title {
+  @apply text-xl font-semibold mb-2;
 }
 
-footer p {
-  margin: 0;
+.project-description {
+  @apply text-gray-600 mb-2;
 }
 
-footer .copyright {
-  text-align: right;
+.project-tech {
+  @apply text-sm font-bold text-gray-500;
 }
 
+/* Skill bar styles */
+.skill-bar {
+  @apply w-full bg-gray-200 rounded-full h-2.5 mb-4;
+}
+
+.skill-progress {
+  @apply h-2.5 rounded-full;
+}
+
+/* Contact form styles */
+.form-input {
+  @apply w-full bg-gray-100 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.submit-button {
+  @apply w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-300;
+}
+
+/* Theme switcher styles */
 .theme-switcher {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  @apply fixed top-4 right-4 z-50;
 }
 
 .theme-switcher-button {
-  background: none;
-  border: none;
-  cursor: pointer;
+  @apply p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300;
 }
 
 .theme-icon {
-  color: #333;
-  font-size: 24px;
+  @apply w-6 h-6 text-gray-800 dark:text-white;
+}
+
+/* Dark mode styles */
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.dark .project-card {
+  @apply bg-gray-800;
+}
+
+.dark .project-description {
+  @apply text-gray-300;
+}
+
+.dark .project-tech {
+  @apply text-gray-400;
+}
+
+.dark .skill-bar {
+  @apply bg-gray-700;
+}
+
+.dark .form-input {
+  @apply bg-gray-800 border-gray-700 text-white;
+}
+
+.dark .submit-button {
+  @apply bg-blue-600 hover:bg-blue-700;
 }
