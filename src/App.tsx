@@ -1,38 +1,42 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import Hero from "./components/Hero.tsx"
 import Projects from "./components/Projects.tsx"
 import About from "./components/About.tsx"
 import Skills from "./components/Skills.tsx"
-import Contact from "./components/Contact.tsx"
+import Experience from "./components/Experience.tsx"
+import Education from "./components/Education.tsx"
 import Footer from "./components/Footer.tsx"
 import Menu from "./components/Menu.tsx"
-import Education from "./components/Education.tsx"
-import Experience from "./components/Experience.tsx"
+import Contact from "./components/Contact.tsx"
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home")
-  const [showContact, setShowContact] = useState(false)
+
+  const sectionRefs = {
+    home: useRef<HTMLElement>(null),
+    projects: useRef<HTMLElement>(null),
+    about: useRef<HTMLElement>(null),
+    skills: useRef<HTMLElement>(null),
+    experience: useRef<HTMLElement>(null),
+    education: useRef<HTMLElement>(null),
+    contact: useRef<HTMLElement>(null),
+  }
 
   const sections = [
-    { id: "home", component: <Hero /> },
-    { id: "projects", component: <Projects /> },
-    { id: "about", component: <About /> },
-    { id: "education", component: <Education /> },
-    { id: "experience", component: <Experience /> },
-    { id: "skills", component: <Skills /> },
+    { id: "home", component: <Hero ref={sectionRefs.home} /> },
+    { id: "projects", component: <Projects ref={sectionRefs.projects} /> },
+    { id: "about", component: <About ref={sectionRefs.about} /> },
+    { id: "skills", component: <Skills ref={sectionRefs.skills} /> },
+    { id: "experience", component: <Experience ref={sectionRefs.experience} /> },
+    { id: "education", component: <Education ref={sectionRefs.education} /> },
+    { id: "contact", component: <Contact ref={sectionRefs.contact} /> },
   ]
 
   const handleMenuClick = (section: string) => {
     setActiveSection(section)
-    if (section === "contact") {
-      setShowContact(true)
-    } else {
-      setShowContact(false)
+    if (sectionRefs[section] && sectionRefs[section].current) {
+      sectionRefs[section].current.scrollIntoView({ behavior: "smooth" })
     }
-  }
-
-  const handleCloseContact = () => {
-    setShowContact(false)
   }
 
   return (
@@ -48,7 +52,6 @@ const App: React.FC = () => {
             {component}
           </section>
         ))}
-        {showContact && <Contact onClose={handleCloseContact} />}
       </main>
       <Footer />
     </div>

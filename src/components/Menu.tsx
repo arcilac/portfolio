@@ -1,55 +1,55 @@
 import React from "react"
 import { Github } from "lucide-react"
-import { Button } from "./ui/button.tsx"
+import { Button } from "../components/ui/button.tsx"
 
 interface MenuProps {
   activeSection: string
   onMenuClick: (section: string) => void
 }
 
-const Menu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) => {
+const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) => {
   const menuItems = ["Home", "Projects", "About", "Education", "Experience", "Skills", "Contact"]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-70 backdrop-filter backdrop-blur-lg">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <a href="#" className="text-white font-bold text-lg">
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-none">
+      {" "}
+      {/* Hice el ancho 90% de la pantalla */}
+      <nav className="bg-black bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-full border border-white border-opacity-20 shadow-lg">
+        <div className="px-8 py-3">
+          <div className="flex items-center justify-between">
+            <a href="#" className="text-white font-bold text-lg mr-8">
               Camila Arcila
             </a>
-          </div>
-          <div className="flex items-center">
-            <ul className="flex space-x-4">
+            <div className="flex items-center space-x-2">
               {menuItems.map((item) => (
-                <li key={item}>
-                  <Button
-                    variant="ghost"
-                    className={`text-sm hover:text-gray-300 transition-colors ${
-                      activeSection === item.toLowerCase()
-                        ? "text-gradient bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent"
-                        : "text-white"
-                    }`}
-                    onClick={() => onMenuClick(item.toLowerCase())}
-                  >
-                    {item}
-                  </Button>
-                </li>
+                <Button
+                  key={item}
+                  variant="ghost"
+                  size="sm"
+                  className={`text-sm hover:text-gray-300 transition-colors ${
+                    activeSection === item.toLowerCase()
+                      ? "text-gradient bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent"
+                      : "text-white"
+                  }`}
+                  onClick={() => onMenuClick(item.toLowerCase())}
+                >
+                  {item}
+                </Button>
               ))}
-            </ul>
-            <a
-              href="https://github.com/Arcilac"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4"
-            >
-              <Github className="w-6 h-6 text-white hover:text-gray-300 transition-colors" />
-            </a>
+              <a
+                href="https://github.com/Arcilac"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-4"
+              >
+                <Github className="w-5 h-5 text-white hover:text-gray-300 transition-colors" />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   )
 }
 
-export default Menu
+export default DynamicIslandMenu
