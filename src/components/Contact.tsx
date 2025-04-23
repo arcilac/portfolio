@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Button } from "../components/ui/button.tsx"
 import { Input } from "../components/ui/input.tsx"
 import { Textarea } from "../components/ui/textArea.tsx"
@@ -19,7 +19,6 @@ const Contact = () => {
           Accept: "application/json",
         },
       })
-      const result = await response.json()
       if (response.ok) {
         setStatus("success")
         form.reset()
