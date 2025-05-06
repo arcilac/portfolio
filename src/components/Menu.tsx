@@ -9,11 +9,12 @@ interface MenuProps {
 
 const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) => {
   const menuItems = ["Home", "Projects", "About", "Education", "Experience", "Skills", "Contact"]
-
+  
+  
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-none">
       {" "}
-      {/* Hice el ancho 90% de la pantalla */}
+      {/* Ancho 90% de la pantalla */}
       <nav className="bg-black bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-full border border-white border-opacity-20 shadow-lg">
         <div className="px-8 py-3">
           <div className="flex items-center justify-between">
@@ -36,6 +37,26 @@ const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) 
                   {item}
                 </Button>
               ))}
+              
+              {/* Blog como enlace externo específico */}
+              <a
+                href="https://arcilac.github.io/my-blog/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`text-sm hover:text-gray-300 transition-colors ${
+                    activeSection === "blog"
+                      ? "text-gradient bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent"
+                      : "text-white"
+                  }`}
+                >
+                  Blog
+                </Button>
+              </a>
+              
               <a
                 href="https://github.com/Arcilac"
                 target="_blank"
