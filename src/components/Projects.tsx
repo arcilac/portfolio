@@ -50,7 +50,7 @@ const projects: Project[] = [
     name: "Triki (Tic Tac Toe) Game",
     tech: "JavaScript",
     description:
-      "I built an interactive Tic Tac Toe game using React and Vite, implementing game logic to manage player turns, detect wins and draws, and reset the board. The project includes a custom CSS layout for a clean and responsive user interface. I also configured the app for deployment on GitHub Pages, resolving path issues using Vite's base configuration. This project showcases my skills in React, modern build tools, and deploying front-end applications in static environments.",
+      "I built an interactive Tic Tac Toe game using React and Vite, implementing game logic to manage player turns, detect wins and draws, and reset the board. The project includes a custom CSS layout for a clean and responsive user interface. Resolving path issues using Vite's base configuration.",
     github: "https://github.com/Arcilac/triki/",
     imageName: "triki.png",
   },
