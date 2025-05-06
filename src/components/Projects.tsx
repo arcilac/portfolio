@@ -1,13 +1,13 @@
-import React, { forwardRef } from "react"
-import { useEffect } from "react"
+import React, { forwardRef } from "react";
+import { useEffect } from "react";
 
 interface Project {
-  name: string
-  tech: string
-  description: string
-  github: string
-  live?: string
-  imageName: string
+  name: string;
+  tech: string;
+  description: string;
+  github: string;
+  live?: string;
+  imageName: string;
 }
 
 const projects: Project[] = [
@@ -46,22 +46,32 @@ const projects: Project[] = [
     live: "https://arcilac.github.io/lazy-load-images/",
     imageName: "lazy-load.jpg",
   },
-]
+  {
+    name: "Triki (Tic Tac Toe) Game",
+    tech: "JavaScript",
+    description:
+      "I built an interactive Tic Tac Toe game using React and Vite, implementing game logic to manage player turns, detect wins and draws, and reset the board. The project includes a custom CSS layout for a clean and responsive user interface. I also configured the app for deployment on GitHub Pages, resolving path issues using Vite's base configuration. This project showcases my skills in React, modern build tools, and deploying front-end applications in static environments.",
+    github: "https://github.com/Arcilac/triki/",
+    imageName: "triki.png",
+  },
+];
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   useEffect(() => {
-    console.log("Current PUBLIC_URL:", process.env.PUBLIC_URL)
+    console.log("Current PUBLIC_URL:", process.env.PUBLIC_URL);
     projects.forEach((project) => {
-      const img = new Image()
-      img.src = `${process.env.PUBLIC_URL}/images/${project.imageName}`
-      img.onload = () => console.log(`Image loaded successfully: ${project.imageName}`)
-      img.onerror = () => console.error(`Failed to load image: ${project.imageName}`)
-    })
-  }, [])
+      const img = new Image();
+      img.src = `${process.env.PUBLIC_URL}/images/${project.imageName}`;
+      img.onload = () =>
+        console.log(`Image loaded successfully: ${project.imageName}`);
+      img.onerror = () =>
+        console.error(`Failed to load image: ${project.imageName}`);
+    });
+  }, []);
 
   const handleProjectClick = (githubUrl: string) => {
-    window.open(githubUrl, "_blank", "noopener,noreferrer")
-  }
+    window.open(githubUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section
@@ -93,9 +103,9 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
         ))}
       </div>
     </section>
-  )
-})
+  );
+});
 
-Projects.displayName = "Projects"
+Projects.displayName = "Projects";
 
-export default Projects
+export default Projects;
