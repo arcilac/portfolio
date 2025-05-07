@@ -14,13 +14,16 @@ const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) 
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-none">
       {" "}
-      {/* Ancho 90% de la pantalla */}
       <nav className="bg-black bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-full border border-white border-opacity-20 shadow-lg">
         <div className="px-8 py-3">
           <div className="flex items-center justify-between">
-            <a href="#" className="text-white font-bold text-lg mr-8">
+            <button
+              type="button"
+              className="text-white font-bold text-lg mr-8 focus:outline-none"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Camila Arcila
-            </a>
+            </button>
             <div className="flex items-center space-x-2">
               {menuItems.map((item) => (
                 <Button
@@ -38,7 +41,6 @@ const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) 
                 </Button>
               ))}
               
-              {/* Blog como enlace externo específico */}
               <a
                 href="https://arcilac.github.io/my-blog/blog/"
                 target="_blank"

@@ -58,14 +58,11 @@ const projects: Project[] = [
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   useEffect(() => {
-    console.log("Current PUBLIC_URL:", process.env.PUBLIC_URL);
     projects.forEach((project) => {
       const img = new Image();
       img.src = `${process.env.PUBLIC_URL}/images/${project.imageName}`;
-      img.onload = () =>
-        console.log(`Image loaded successfully: ${project.imageName}`);
-      img.onerror = () =>
-        console.error(`Failed to load image: ${project.imageName}`);
+      img.onload = () => {};
+      img.onerror = () => {};
     });
   }, []);
 
