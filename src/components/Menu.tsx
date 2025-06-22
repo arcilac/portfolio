@@ -1,16 +1,26 @@
-import React from "react"
-import { Github } from "lucide-react"
-import { Button } from "../components/ui/button.tsx"
+import React from "react";
+import { Github } from "lucide-react";
+import { Button } from "../components/ui/button.tsx";
 
 interface MenuProps {
-  activeSection: string
-  onMenuClick: (section: string) => void
+  activeSection: string;
+  onMenuClick: (section: string) => void;
 }
 
-const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) => {
-  const menuItems = ["Home", "Projects", "About", "Education", "Experience", "Skills", "Contact"]
-  
-  
+const DynamicIslandMenu: React.FC<MenuProps> = ({
+  activeSection,
+  onMenuClick,
+}) => {
+  const menuItems = [
+    "Home",
+    "Projects",
+    "About",
+    "Education",
+    "Experience",
+    "Skills",
+    "Contact",
+  ];
+
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-none">
       {" "}
@@ -40,7 +50,7 @@ const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) 
                   {item}
                 </Button>
               ))}
-              
+
               <a
                 href="https://arcilac.github.io/my-blog/blog/"
                 target="_blank"
@@ -58,9 +68,9 @@ const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) 
                   Blog
                 </Button>
               </a>
-              
+
               <a
-                href="https://github.com/Arcilac"
+                href="https://github.com/arcilac"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-4"
@@ -72,7 +82,7 @@ const DynamicIslandMenu: React.FC<MenuProps> = ({ activeSection, onMenuClick }) 
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default DynamicIslandMenu
+export default DynamicIslandMenu;
